@@ -16,7 +16,8 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        //testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.example.daggerhiilt.TestRunner"
     }
 
     buildTypes {
@@ -52,11 +53,13 @@ dependencies {
 
     // For instrumentation tests
     androidTestImplementation("com.google.dagger:hilt-android-testing:2.50")
-    androidTestAnnotationProcessor("com.google.dagger:hilt-compiler:2.50")
+    // ...with Kotlin.
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.50")
 
     // For local unit tests
     testImplementation("com.google.dagger:hilt-android-testing:2.50")
     testAnnotationProcessor("com.google.dagger:hilt-compiler:2.50")
+
 }
 
 kapt {
